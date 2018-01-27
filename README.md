@@ -1,4 +1,7 @@
 # HOT or NOT
+![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/hack1.png)
+![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/hack1.png)
+![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/hack3.png)
 
 > An Ethereum based decentralised application where a particular issue or idea gets promoted globally.
 
