@@ -1,7 +1,7 @@
 Web3=require('web3');
 web3 = new Web3( new Web3.providers.HttpProvider("http://localhost:8545/") );
-abi = JSON.parse('[{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"proposals","outputs":[{"name":"text","type":"string"},{"name":"index","type":"uint256"},{"name":"upvotes","type":"uint256"},{"name":"downvotes","type":"uint256"},{"name":"totalvotes","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"text","type":"string"}],"name":"propose","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"vindex","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"pindex","type":"uint256"},{"name":"support","type":"bool"}],"name":"vote","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getNoOfProposals","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"voters","outputs":[{"name":"at","type":"address"},{"name":"index","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"init","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"admin","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]');
-ethvote = web3.eth.contract(abi).at('0x89f2b76d331a01318c60c75556c69a8e90941732');
+abi = JSON.parse('[{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"proposals","outputs":[{"name":"text","type":"string"},{"name":"index","type":"uint256"},{"name":"upvotes","type":"uint256"},{"name":"downvotes","type":"uint256"},{"name":"totalvotes","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"text","type":"string"}],"name":"propose","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"pindex","type":"uint256"},{"name":"support","type":"uint256"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"voted","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getNoOfProposals","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"admin","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]');
+ethvote = web3.eth.contract(abi).at('0x3bdbca13d266841c68afa8628947c1146b842ebb');
 
 
 function createContent() {
@@ -12,14 +12,15 @@ function createContent() {
 		ethvote.proposals.call(i)[3].c[0].toString() + '</span> <span class="totalvote-cnt">' + 
 		ethvote.proposals.call(i)[4].c[0].toString() + '</span>' + ethvote.proposals.call(i)[0].toString() + "</div>";
 
-		var vindex = parseInt(ethvote.vindex.call().c[0].toString());
-		console.log("vindex:" + ethvote.vindex.call());
-
-		/*if(ethvote.voters.call(vindex)[2][i].toString == 'true') {
-			console.log("already voted " + i);
+		var oldvote = parseInt(ethvote.voted.call(web3.eth.accounts[0],i).c[0].toString()); 
+		
+		if(oldvote == 1) {
+			console.log("already voted yes: " + i);
+		} else if (oldvote == 2) {
+			console.log("already voted no: " + i);
 		} else {
-			console.log("can vote " + i);
-		}*/
+			console.log("can vote: " + i);
+		}
 
 		
 	}
@@ -32,19 +33,18 @@ function createContent() {
 		console.log("Balance: " + web3.eth.getBalance(web3.eth.accounts[0]));
 		var pindex = parseInt($(this).parent().attr("index-data"));
 		console.log(pindex);
-        ethvote.vote(pindex+"",true, {from:web3.eth.accounts[0], gas:3000000});
+        ethvote.vote(pindex,1, {from:web3.eth.accounts[0], gas:3000000});
 	});
 
 	$('.downbtn').click(function(){
 		var pindex = $(this).parent().attr("index-data");
-        ethvote.vote(pindex,false,{from:web3.eth.accounts[0],gas:3000000});
+        ethvote.vote(pindex,2,{from:web3.eth.accounts[0],gas:3000000});
 	});
 
 
 }
 
 $(function() {
-	ethvote.init.call({from:web3.eth.accounts[0],gas:3000000});
 	createContent();
 });
 
