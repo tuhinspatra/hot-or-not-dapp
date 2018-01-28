@@ -28,6 +28,14 @@
 	margin-top: 10px;
 	background: linear-gradient(to right, #3ebcd6 0%, #d13038 100%);
 	color: white;
+	float: left;
+}
+
+#submitprop2{
+	margin-top: 10px;
+	background: linear-gradient(to right, #3ebcd6 0%, #d13038 100%);
+	color: white;
+	float: right;
 }
 
 #userinfo{

@@ -1,5 +1,4 @@
 pragma solidity ^0.4.18;
-
 contract Cards {
 	
 	uint noOfProposals = 0;
@@ -12,11 +11,15 @@ contract Cards {
 		uint upvotes;
 		uint downvotes;
 		uint totalvotes;
+		uint isImg;
 	}
 
 	address public admin;
-
 	Proposal[] public proposals;
+
+	function getCurrentUser() returns(address) {
+		return msg.sender;
+	}
 
 	function Cards() public {
 		admin = msg.sender;
@@ -24,6 +27,7 @@ contract Cards {
 			proposals[i].totalvotes = 0;
 			proposals[i].upvotes = 0;
 			proposals[i].downvotes = 0;
+		    proposals[i].isImg=0;
 		}
 	}
 
@@ -41,8 +45,14 @@ contract Cards {
 	}
 
 	function propose(string text) public {
-		proposals.push(Proposal({text: text, index: proposals.length-1,upvotes:0,downvotes:0,totalvotes:0}));
+		proposals.push(Proposal({text: text, index: proposals.length-1,upvotes:0,downvotes:0,totalvotes:0,isImg:1}));
 		noOfProposals = proposals.length;
 	}
+     
+
+    function proposeImg(string text) public {
+      proposals.push(Proposal({text: text ,index : proposals.length-1 ,upvotes:0,downvotes:0,totalvotes:0,isImg:2}));
+      noOfProposals=proposals.length;
+    }
 
 }
