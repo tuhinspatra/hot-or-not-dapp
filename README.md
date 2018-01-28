@@ -32,17 +32,15 @@ The ideas or proposal getting more votes will be trending or appearing at top re
 
 ## Deployment
 
-You may use Metamask or testrpc (or some other tool) to deploy a test network. Using testrpc provides a quick way to play with 10 test accounts with 100 ethers each.
+You may use Metamask or testrpc (or Mist browser) to deploy a test network. Using `testrpc` provides a quick way to play with 10 test accounts with 100 ethers each.
 
-We have made a SmartContract in a filename with extension .sol (filename.sol) using solidity language which has been designed to design the smartcontract easily.
+`Cards.sol` is the smart-contract. It is compiled with the `solc` compiler.
 
-The Filename.sol is compiled with help of solc compiler.Solc compiler has been designed to compile the SmartContract code.
+The sol is linked with the javascript using the `web3.js` library. Run `node connect.js` and replace the abi and contract address in `main.js`.
 
-After Compiling the SmartContract, it is deployed with the help of web3.js library and a key is generated which is copied in main.js file in which code has been written to create interaction between ethereum network(testrpc/ganache-cli) and smartContract.
+Open `index.html` in your browser.
 
-The UserInterface(FrontEnd) has been connected with backEnd through Html file.
-The FrontEnd has been designed with help of css,bootstrap,and little bit javascript code.
-
+Change `web3.eth.accounts[0]` to `web3.eth.accounts[1]` in `main.js` to interact as a different user. (You have 10 test users). 
 
 ## Authors
 
