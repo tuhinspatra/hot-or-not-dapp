@@ -1,10 +1,8 @@
 # HOT or NOT
-![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshots/screenshot1.png)
-![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshots/screenshot2.png)
-![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshots/screenshot3.png)
+
 
 > An Ethereum based decentralised application where a particular issue or idea gets promoted globally.
-> Proposers pay, voters get paid (with dynamic value reward to usher in voters).
+> **Proposers pay (with dynamic value 'charges' to initiate proposals), voters get paid (with dynamic value 'reward' to usher in voters)**.
 
 A DApp where a user can add any issue or propose some idea/view in the form of text or small sized images which will be stored on the blockchain network (forever)!
 People can react to the proposals or issues by upvoting / downvoting it.
@@ -16,6 +14,10 @@ The ideas or proposal getting more votes will be trending or appearing at top re
 * Raising public issues without government intervention or censor!
 * Advertising yourself and/or your ideas.
 
+## Screenshots
+![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshots/screenshot1.png)
+![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshots/screenshot2.png)
+![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshots/screenshot3.png)
 
 ## Languages Used
 * [JavaScript](https://www.javascript.com/) / [JQuery](https://jquery.com/)
