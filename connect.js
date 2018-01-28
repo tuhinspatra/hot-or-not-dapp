@@ -14,7 +14,7 @@ fs = require('fs');
       if( contract.address )
         {
           console.log("Deployed successfully...\n\n\nDeployed Address : " + contract.address );
-          console.log("Use the above deployed address in realEstate.js ...\n\n");
+          console.log("Use the above deployed address in Cards.js ...\n\n");
         }
  });
 

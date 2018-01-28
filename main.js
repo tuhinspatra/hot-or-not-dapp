@@ -140,7 +140,7 @@ const toDataURL = url => fetch(url)
 toDataURL(url)
   .then(dataUrl => {
     console.log('RESULT:', dataUrl);
-    ethvote.proposeImg(dataUrl,{from: curUser, gas:5000000 });
+    ethvote.proposeImg(dataUrl,{from: curUser, gas:3000000 });
  addcard(2);
   });
 
