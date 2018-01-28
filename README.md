@@ -1,14 +1,20 @@
 # HOT or NOT
-![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshot1.png)
-![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshot2.png)
-![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshot3.png)
+![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshots/screenshot1.png)
+![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshots/screenshot2.png)
+![alt text](https://github.com/armag-pro/hot-or-not-dapp/blob/master/screenshots/screenshot3.png)
 
 > An Ethereum based decentralised application where a particular issue or idea gets promoted globally.
+> Proposers pay, voters get paid (with dynamic value reward to usher in voters).
 
-On this DApp the User can Add any issue or propose some idea/views and it will be uploaded on the blockchain network.
-Other people will react to the proposal or issue by upvoting or downvoting it.
+A DApp where a user can add any issue or propose some idea/view in the form of text or small sized images which will be stored on the blockchain network (forever)!
+People can react to the proposals or issues by upvoting / downvoting it.
 This platform can be used to arrange elections in which we can upvote our favourite view or idea.
 The ideas or proposal getting more votes will be trending or appearing at top resspectively.
+
+## Motivation
+* Free and fair elections where the leader pays and you get paid!
+* Raising public issues without government intervention or censor!
+* Advertising yourself and/or your ideas.
 
 
 ## Languages Used
@@ -16,11 +22,11 @@ The ideas or proposal getting more votes will be trending or appearing at top re
 * [Solidity](https://solidity.readthedocs.io/en/develop/)
 * [Node.js](https://nodejs.org/)
 * [HTML](https://html.com/) / [CSS](https://www.w3.org/Style/CSS/Overview.en.html) / [Bootstrap](https://getbootstrap.com/)
-* [npm](https://www.npmjs.com/) packages ([ganache-cli](https://github.com/trufflesuite/ganache-cli), [testrpc](https://www.npmjs.com/package/ethereumjs-testrpc), [web3](https://github.com/ethereum/web3.js/), [solc](https://github.com/ethereum/solc-js)
 
 ## Built With
 * [Remix](remix.ethereum.org) online IDE
-* [Metamask(Chrome Extension)](https://metamask.io/)
+* [Metamask](https://metamask.io/)(Browser Extension)
+* [npm](https://www.npmjs.com/) packages ([ganache-cli](https://github.com/trufflesuite/ganache-cli), [testrpc](https://www.npmjs.com/package/ethereumjs-testrpc), [web3](https://github.com/ethereum/web3.js/), [solc](https://github.com/ethereum/solc-js)
 
 ## Deployment
 
